@@ -1,0 +1,98 @@
+.scale-loading {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(14, 10, 7, 0.99);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    z-index: 1002;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: 1s;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.loading .logo-loading {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-animation: float 2s infinite linear;
+    animation: float 2s infinite linear;
+    margin-bottom: 100px;
+}
+
+.loading .logo-loading img {
+    width: 100px;
+}
+
+.loading .loading-progress-bar {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 2px solid rgba(2, 2, 2, 0.719);
+    border-top-color: #975e29;
+    -webkit-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

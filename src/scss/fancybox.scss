@@ -1,0 +1,80 @@
+
+.fancybox__html5video, .fancybox__iframe {
+    border: none !important;
+    outline: none !important;
+    border-radius: 10px !important;
+}
+
+.carousel__viewport {
+    display: none !important;
+}
+
+.fancybox__button--thumbs {
+    display: none !important;
+}
+
+.fancybox__button--zoom {
+    display: none !important;
+}
+
+.fancybox__button--fullscreen {
+    display: none !important;
+}
+
+.fancybox__button--slideshow {
+    display: none !important;
+}
+
+
+
+.fancybox__counter {
+    display: none !important;
+}
+
+.fancybox__carousel {
+    background-color: rgba(0, 0, 0, 0.76) !important;
+}
+
+.fancybox__content {
+    border-radius: 10px !important;
+}
+
+
+
+.is-next {
+    background-color: var(--body) !important;
+    outline: none !important;
+    border: none !important;
+
+    &:hover {
+        svg {
+            color: var(--white) !important;
+        }
+    }
+
+    svg {
+        width: 20px !important;
+        height: 20px !important;
+        color: rgba(var(--white-rgb), 0.5);
+        transition: .5s !important;
+    }
+}
+
+.is-prev {
+    background-color: var(--body) !important;
+    outline: none !important;
+    border: none !important;
+
+    &:hover {
+        svg {
+            color: var(--white) !important;
+        }
+    }
+
+    svg {
+        width: 20px !important;
+        height: 20px !important;
+        color: rgba(var(--white-rgb), 0.5);
+        transition: .5s !important;
+    }
+}
