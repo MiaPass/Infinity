@@ -33,22 +33,42 @@ import "../../css/fancybox.css";
 
 import $ from "jquery";
 
-import MobileNavbar from "../../js/nav";
-
 export default function Index() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const mobileNavbar = new MobileNavbar(
-        ".mobile-menu",
-        ".nav-list",
-        ".nav-list li"
-    );
 
     useEffect(() => {
         AOS.init();
-        mobileNavbar.init();
-    }, [mobileNavbar]);
+    }, []);
 
     $(window).trigger("scroll", scrolled());
+
+    const handleNav = (e) => {
+        e.preventDefault();
+        let totalNav = {
+            mobileMenu: document.querySelector(".mobile-menu"),
+            navList: document.querySelector(".nav-list"),
+            navLinks: document.querySelectorAll(".nav-list li"),
+            activeClass: "active",
+            handle1Click: handleClick.bind(this),
+        };
+
+        function handleClick() {
+            totalNav.navList.classList.toggle(totalNav.activeClass);
+            totalNav.mobileMenu.classList.toggle(totalNav.activeClass);
+        }
+        function addClickEvent() {
+            totalNav.mobileMenu.addEventListener("click", totalNav.handle1Click);
+        }
+
+        function init() {
+            if (totalNav.mobileMenu) {
+                addClickEvent();
+            }
+            return totalNav;
+        }
+
+        init();
+    };
 
     return (
         <div>
@@ -57,7 +77,7 @@ export default function Index() {
                 <div className="logo-loading">
                     <img src={imagesSymbol} alt="../../images/symbol.png" />
                 </div>
-                <div className="loading-progress-bar" />
+                <div className="loading-progress-bar"></div>
             </div>
             {/*end loading*/}
             <div className="page">
@@ -70,14 +90,14 @@ export default function Index() {
                             rel="noreferrer"
                         >
                             <span>
-                                <i className="fa-brands fa-discord" />
+                                <i className="fa-brands fa-discord"></i>
                             </span>
                         </a>
                     </div>
                     <div>
                         <a href="/" target="_blank">
                             <span>
-                                <i className="fa-brands fa-facebook" />
+                                <i className="fa-brands fa-facebook"></i>
                             </span>
                         </a>
                     </div>
@@ -89,13 +109,13 @@ export default function Index() {
                     <div className="server-content">
                         <div className="server-content-server">
                             <div className="server-content-img">
-                                <div className="shadow" />
+                                <div className="shadow"></div>
                                 <img
                                     src={charsSylph}
                                     alt="../../images/chars/sylph.png"
                                 />
                             </div>
-                            <div className="server-content-bg orange" />
+                            <div className="server-content-bg orange"></div>
                         </div>
                         <div className="server-content-text">
                             <p>Essence x30</p>
@@ -106,13 +126,13 @@ export default function Index() {
                     <div className="server-content">
                         <div className="server-content-server">
                             <div className="server-content-img">
-                                <div className="shadow" />
+                                <div className="shadow"></div>
                                 <img
                                     src={charsErtheia}
                                     alt="../../images/chars/ertheia.png"
                                 />
                             </div>
-                            <div className="server-content-bg red" />
+                            <div className="server-content-bg red"></div>
                         </div>
                         <div className="server-content-text">
                             <p>Essence x1000</p>
@@ -151,20 +171,20 @@ export default function Index() {
                         </li>
                         <li>
                             <a className="nav-item start" href="/PlayNow">
-                                <i className="fa-solid fa-angles-down" />
+                                <i className="fa-solid fa-angles-down"></i>
                                 Start the Game
                             </a>
                         </li>
                     </ul>
-                    <div className="mobile-menu">
-                        <div className="line1" />
-                        <div className="line2" />
-                        <div className="line3" />
+                    <div className="mobile-menu" onClick={(e) => handleNav(e)}>
+                        <div className="line1"></div>
+                        <div className="line2"></div>
+                        <div className="line3"></div>
                     </div>
                     {/*nav right*/}
                     <div className="nav-right">
                         <span className="my-account">
-                            <i className="fa-solid fa-user" />
+                            <i className="fa-solid fa-user"></i>
                             <div className="my-account-dropdown">
                                 <a className="login" href="/">
                                     Login
@@ -175,7 +195,7 @@ export default function Index() {
                             </div>
                         </span>
                         <span className="lang">
-                            <i className="fa-solid fa-earth-americas" />
+                            <i className="fa-solid fa-earth-americas"></i>
                             <div className="lang-dropdown">
                                 <a href="/">Português</a>
                                 <a href="/">Español</a>
@@ -211,7 +231,7 @@ export default function Index() {
                 </div>
                 {/*inner content*/}
                 <section className="inner container">
-                    <div className="line" />
+                    <div className="line"></div>
                     <div className="inner-title">Media</div>
                     <div className="inner-content">
                         <div className="video">
@@ -221,7 +241,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>
@@ -232,7 +252,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>
@@ -243,7 +263,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>
@@ -254,7 +274,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>
@@ -265,7 +285,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>
@@ -276,7 +296,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>
@@ -287,7 +307,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>
@@ -298,7 +318,7 @@ export default function Index() {
                                     data-fancybox="group-1"
                                 >
                                     <div>
-                                        <i className="fa-solid fa-play" />
+                                        <i className="fa-solid fa-play"></i>
                                     </div>
                                     <img src={bg1} alt="../../images/bg/1.jpg" />
                                 </a>

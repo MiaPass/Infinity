@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 
-import MobileNavbar from "../../js/nav";
-
 /**/
 
 import AOS from "aos";
@@ -38,19 +36,41 @@ import $ from "jquery";
 
 export default function PlayNow() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const mobileNavbar = new MobileNavbar(
-        ".mobile-menu",
-        ".nav-list",
-        ".nav-list li"
-    );
 
     useEffect(() => {
         AOS.init();
-        mobileNavbar.init();
-    }, [mobileNavbar]);
+    }, []);
 
     // window.onload = loaded();
     $(window).trigger("scroll", scrolled());
+
+    const handleNav = (e) => {
+        e.preventDefault();
+        let totalNav = {
+            mobileMenu: document.querySelector(".mobile-menu"),
+            navList: document.querySelector(".nav-list"),
+            navLinks: document.querySelectorAll(".nav-list li"),
+            activeClass: "active",
+            handle1Click: handleClick.bind(this),
+        };
+
+        function handleClick() {
+            totalNav.navList.classList.toggle(totalNav.activeClass);
+            totalNav.mobileMenu.classList.toggle(totalNav.activeClass);
+        }
+        function addClickEvent() {
+            totalNav.mobileMenu.addEventListener("click", totalNav.handle1Click);
+        }
+
+        function init() {
+            if (totalNav.mobileMenu) {
+                addClickEvent();
+            }
+            return totalNav;
+        }
+
+        init();
+    };
 
     return (
         <div>
@@ -59,7 +79,7 @@ export default function PlayNow() {
                 <div className="logo-loading">
                     <img src={imagesSymbol} alt="../../images/symbol.png" />
                 </div>
-                <div className="loading-progress-bar" />
+                <div className="loading-progress-bar"></div>
             </div>
             {/*end loading*/}
             <div className="page">
@@ -79,7 +99,7 @@ export default function PlayNow() {
                     <div>
                         <a href="/" target="_blank">
                             <span>
-                                <i className="fa-brands fa-facebook" />
+                                <i className="fa-brands fa-facebook"></i>
                             </span>
                         </a>
                     </div>
@@ -91,13 +111,13 @@ export default function PlayNow() {
                     <div className="server-content">
                         <div className="server-content-server">
                             <div className="server-content-img">
-                                <div className="shadow" />
+                                <div className="shadow"></div>
                                 <img
                                     src={charsSylph}
                                     alt="../../images/chars/sylph.png"
                                 />
                             </div>
-                            <div className="server-content-bg orange" />
+                            <div className="server-content-bg orange"></div>
                         </div>
                         <div className="server-content-text">
                             <p>Essence x30</p>
@@ -108,13 +128,13 @@ export default function PlayNow() {
                     <div className="server-content">
                         <div className="server-content-server">
                             <div className="server-content-img">
-                                <div className="shadow" />
+                                <div className="shadow"></div>
                                 <img
                                     src={charsErtheia}
                                     alt="../../images/chars/ertheia.png"
                                 />
                             </div>
-                            <div className="server-content-bg red" />
+                            <div className="server-content-bg red"></div>
                         </div>
                         <div className="server-content-text">
                             <p>Essence x1000</p>
@@ -153,20 +173,20 @@ export default function PlayNow() {
                         </li>
                         <li>
                             <a className="nav-item start" href="/PlayNow">
-                                <i className="fa-solid fa-angles-down" />
+                                <i className="fa-solid fa-angles-down"></i>
                                 Start the Game
                             </a>
                         </li>
                     </ul>
-                    <div className="mobile-menu">
-                        <div className="line1" />
-                        <div className="line2" />
-                        <div className="line3" />
+                    <div className="mobile-menu" onClick={(e) => handleNav(e)}>
+                        <div className="line1"></div>
+                        <div className="line2"></div>
+                        <div className="line3"></div>
                     </div>
                     {/*nav right*/}
                     <div className="nav-right">
                         <span className="my-account">
-                            <i className="fa-solid fa-user" />
+                            <i className="fa-solid fa-user"></i>
                             <div className="my-account-dropdown">
                                 <a className="login" href="/">
                                     Login
@@ -177,7 +197,7 @@ export default function PlayNow() {
                             </div>
                         </span>
                         <span className="lang">
-                            <i className="fa-solid fa-earth-americas" />
+                            <i className="fa-solid fa-earth-americas"></i>
                             <div className="lang-dropdown">
                                 <a href="/">Português</a>
                                 <a href="/">Español</a>
@@ -213,7 +233,7 @@ export default function PlayNow() {
                 </div>
                 {/*inner content*/}
                 <section className="inner container">
-                    <div className="line" />
+                    <div className="line"></div>
                     <div className="inner-title">How to Connect</div>
                     <div className="inner-content">
                         <div className="step">

@@ -26,26 +26,25 @@ function App() {
 
     return (
         <div className="App">
-            <head>
-                <meta charSet="UTF-8"></meta>
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0"
-                ></meta>
+            <meta charSet="UTF-8"></meta>
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            ></meta>
 
-                {/*Developed by un1k.digital*/}
+            {/*Developed by un1k.digital*/}
 
-                <link
-                    rel="stylesheet"
-                    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-                ></link>
+            <link
+                rel="stylesheet"
+                href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            ></link>
 
-                {/*svg icon library*/}
+            {/*svg icon library*/}
 
-                <title>Infinity Essence</title>
-                <link rel="icon" type="image/x-icon" href={imagesFavicon}></link>
-            </head>
+            <title>Infinity Essence</title>
+            <link rel="icon" type="image/x-icon" href={imagesFavicon}></link>
+
             <Routes>
                 <Route exact path="/" element={<Index />} />
                 <Route exact path="/About" element={<About />} />

@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 
-import MobileNavbar from "../../js/nav";
-
 /**/
 
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 /**/
@@ -38,18 +37,41 @@ import $ from "jquery";
 
 export default function About() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const mobileNavbar = new MobileNavbar(
-        ".mobile-menu",
-        ".nav-list",
-        ".nav-list li"
-    );
 
     useEffect(() => {
-        mobileNavbar.init();
-    }, [mobileNavbar]);
+        AOS.init();
+    }, []);
 
     // window.onload = loaded();
     $(window).trigger("scroll", scrolled());
+
+    const handleNav = (e) => {
+        e.preventDefault();
+        let totalNav = {
+            mobileMenu: document.querySelector(".mobile-menu"),
+            navList: document.querySelector(".nav-list"),
+            navLinks: document.querySelectorAll(".nav-list li"),
+            activeClass: "active",
+            handle1Click: handleClick.bind(this),
+        };
+
+        function handleClick() {
+            totalNav.navList.classList.toggle(totalNav.activeClass);
+            totalNav.mobileMenu.classList.toggle(totalNav.activeClass);
+        }
+        function addClickEvent() {
+            totalNav.mobileMenu.addEventListener("click", totalNav.handle1Click);
+        }
+
+        function init() {
+            if (totalNav.mobileMenu) {
+                addClickEvent();
+            }
+            return totalNav;
+        }
+
+        init();
+    };
 
     return (
         <div>
@@ -58,7 +80,7 @@ export default function About() {
                 <div className="logo-loading">
                     <img src={imagesSymbol} alt="../../images/symbol.png" />
                 </div>
-                <div className="loading-progress-bar" />
+                <div className="loading-progress-bar"></div>
             </div>
             {/*end loading*/}
             <div className="page">
@@ -158,7 +180,7 @@ export default function About() {
                             </a>
                         </li>
                     </ul>
-                    <div className="mobile-menu">
+                    <div className="mobile-menu" onClick={(e) => handleNav(e)}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>

@@ -20,8 +20,10 @@ class MobileNavbar {
         if (this.mobileMenu) {
             this.addClickEvent();
         }
-        return this;
+        console.log(this);
     }
 }
 
-export default MobileNavbar;
+const mobileNavbar = new MobileNavbar(".mobile-menu", ".nav-list", ".nav-list li");
+
+console.log(mobileNavbar.init());

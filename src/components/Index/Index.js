@@ -56,29 +56,44 @@ import "swiper/css";
 
 import $ from "jquery";
 
-import MobileNavbar from "../../js/nav";
-
 SwiperCore.use([Navigation]);
 
 export default function Index() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const mobileNavbar = new MobileNavbar(
-        ".mobile-menu",
-        ".nav-list",
-        ".nav-list li"
-    );
 
     useEffect(() => {
         AOS.init();
-        const mobileNavbar = new MobileNavbar(
-            ".mobile-menu",
-            ".nav-list",
-            ".nav-list li"
-        );
-        mobileNavbar.init();
-    }, [mobileNavbar]);
+    });
 
     $(window).trigger("scroll", scrolled());
+
+    const handleNav = (e) => {
+        e.preventDefault();
+        let totalNav = {
+            mobileMenu: document.querySelector(".mobile-menu"),
+            navList: document.querySelector(".nav-list"),
+            navLinks: document.querySelectorAll(".nav-list li"),
+            activeClass: "active",
+            handle1Click: handleClick.bind(this),
+        };
+
+        function handleClick() {
+            totalNav.navList.classList.toggle(totalNav.activeClass);
+            totalNav.mobileMenu.classList.toggle(totalNav.activeClass);
+        }
+        function addClickEvent() {
+            totalNav.mobileMenu.addEventListener("click", totalNav.handle1Click);
+        }
+
+        function init() {
+            if (totalNav.mobileMenu) {
+                addClickEvent();
+            }
+            return totalNav;
+        }
+
+        init();
+    };
 
     return (
         <div>
@@ -87,7 +102,7 @@ export default function Index() {
                 <div className="logo-loading">
                     <img src={imagesSymbol} alt="../../images/symbol.png" />
                 </div>
-                <div className="loading-progress-bar" />
+                <div className="loading-progress-bar"></div>
             </div>
             {/*end loading*/}
 
@@ -100,14 +115,14 @@ export default function Index() {
                         rel="noreferrer"
                     >
                         <span>
-                            <i className="fa-brands fa-discord" />
+                            <i className="fa-brands fa-discord"></i>
                         </span>
                     </a>
                 </div>
                 <div>
                     <a href="/" target="_blank">
                         <span>
-                            <i className="fa-brands fa-facebook" />
+                            <i className="fa-brands fa-facebook"></i>
                         </span>
                     </a>
                 </div>
@@ -119,13 +134,13 @@ export default function Index() {
                 <div className="server-content">
                     <div className="server-content-server">
                         <div className="server-content-img">
-                            <div className="shadow" />
+                            <div className="shadow"></div>
                             <img
                                 src={charsSylph}
                                 alt="../../images/chars/sylph.png"
                             />
                         </div>
-                        <div className="server-content-bg orange" />
+                        <div className="server-content-bg orange"></div>
                     </div>
                     <div className="server-content-text">
                         <p>Essence x30</p>
@@ -136,13 +151,13 @@ export default function Index() {
                 <div className="server-content">
                     <div className="server-content-server">
                         <div className="server-content-img">
-                            <div className="shadow" />
+                            <div className="shadow"></div>
                             <img
                                 src={charsErtheia}
                                 alt="../../images/chars/ertheia.png"
                             />
                         </div>
-                        <div className="server-content-bg red" />
+                        <div className="server-content-bg red"></div>
                     </div>
                     <div className="server-content-text">
                         <p>Essence x1000</p>
@@ -181,20 +196,20 @@ export default function Index() {
                     </li>
                     <li>
                         <a className="nav-item start" href="#playnow">
-                            <i className="fa-solid fa-angles-down" />
+                            <i className="fa-solid fa-angles-down"></i>
                             Start the Game
                         </a>
                     </li>
                 </ul>
-                <div className="mobile-menu">
-                    <div className="line1" />
-                    <div className="line2" />
-                    <div className="line3" />
+                <div className="mobile-menu" onClick={(e) => handleNav(e)}>
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
                 </div>
                 {/*nav right*/}
                 <div className="nav-right">
                     <span className="my-account">
-                        <i className="fa-solid fa-user" />
+                        <i className="fa-solid fa-user"></i>
                         <div className="my-account-dropdown">
                             <a className="login" href="/">
                                 Login
@@ -205,7 +220,7 @@ export default function Index() {
                         </div>
                     </span>
                     <span className="lang">
-                        <i className="fa-solid fa-earth-americas" />
+                        <i className="fa-solid fa-earth-americas"></i>
                         <div className="lang-dropdown">
                             <a href="/">Português</a>
                             <a href="/">Español</a>
@@ -354,7 +369,7 @@ export default function Index() {
                 </div>
                 {/*end store character*/}
                 {/*topline*/}
-                <div className="line" />
+                <div className="line"></div>
                 {/*end topline*/}
 
                 {/*features*/}
@@ -372,10 +387,10 @@ export default function Index() {
                         <div className="features-content">
                             {/*controls*/}
                             <div className="swiper-button-prev features-content-prev">
-                                <i className="fa-solid fa-chevron-left" />
+                                <i className="fa-solid fa-chevron-left"></i>
                             </div>
                             <div className="swiper-button-next features-content-next">
-                                <i className="fa-solid fa-chevron-right" />
+                                <i className="fa-solid fa-chevron-right"></i>
                             </div>
                             {/*end controls*/}
 
@@ -403,7 +418,7 @@ export default function Index() {
                                 {/*slide 1*/}
                                 <SwiperSlide className="swiper-slide">
                                     <div className="features-content-slide">
-                                        <div className="div" />
+                                        <div className="div"></div>
                                         <div className="div1">
                                             <div className="div2">
                                                 <div className="div3">
@@ -420,7 +435,7 @@ export default function Index() {
                                                                     title right here!
                                                                 </p>
                                                                 <a href="/">
-                                                                    <i className="fa-solid fa-plus" />
+                                                                    <i className="fa-solid fa-plus"></i>
                                                                     Read More
                                                                 </a>
                                                             </div>
@@ -435,7 +450,7 @@ export default function Index() {
                                 {/*slide 2*/}
                                 <SwiperSlide className="swiper-slide">
                                     <div className="features-content-slide">
-                                        <div className="div" />
+                                        <div className="div"></div>
                                         <div className="div1">
                                             <div className="div2">
                                                 <div className="div3">
@@ -452,7 +467,7 @@ export default function Index() {
                                                                     title right here!
                                                                 </p>
                                                                 <a href="/">
-                                                                    <i className="fa-solid fa-plus" />
+                                                                    <i className="fa-solid fa-plus"></i>
                                                                     Read More
                                                                 </a>
                                                             </div>
@@ -467,7 +482,7 @@ export default function Index() {
                                 {/*slide 3*/}
                                 <SwiperSlide className="swiper-slide">
                                     <div className="features-content-slide">
-                                        <div className="div" />
+                                        <div className="div"></div>
                                         <div className="div1">
                                             <div className="div2">
                                                 <div className="div3">
@@ -484,7 +499,7 @@ export default function Index() {
                                                                     title right here!
                                                                 </p>
                                                                 <a href="/">
-                                                                    <i className="fa-solid fa-plus" />
+                                                                    <i className="fa-solid fa-plus"></i>
                                                                     Read More
                                                                 </a>
                                                             </div>
@@ -499,7 +514,7 @@ export default function Index() {
                                 {/*slide 4*/}
                                 <SwiperSlide className="swiper-slide">
                                     <div className="features-content-slide">
-                                        <div className="div" />
+                                        <div className="div"></div>
                                         <div className="div1">
                                             <div className="div2">
                                                 <div className="div3">
@@ -516,7 +531,7 @@ export default function Index() {
                                                                     title right here!
                                                                 </p>
                                                                 <a href="/">
-                                                                    <i className="fa-solid fa-plus" />
+                                                                    <i className="fa-solid fa-plus"></i>
                                                                     Read More
                                                                 </a>
                                                             </div>
@@ -531,7 +546,7 @@ export default function Index() {
                                 {/*slide 5*/}
                                 <SwiperSlide className="swiper-slide">
                                     <div className="features-content-slide">
-                                        <div className="div" />
+                                        <div className="div"></div>
                                         <div className="div1">
                                             <div className="div2">
                                                 <div className="div3">
@@ -548,7 +563,7 @@ export default function Index() {
                                                                     title right here!
                                                                 </p>
                                                                 <a href="/">
-                                                                    <i className="fa-solid fa-plus" />
+                                                                    <i className="fa-solid fa-plus"></i>
                                                                     Read More
                                                                 </a>
                                                             </div>
@@ -563,7 +578,7 @@ export default function Index() {
                                 {/*slide 6*/}
                                 <SwiperSlide className="swiper-slide">
                                     <div className="features-content-slide">
-                                        <div className="div" />
+                                        <div className="div"></div>
                                         <div className="div1">
                                             <div className="div2">
                                                 <div className="div3">
@@ -580,7 +595,7 @@ export default function Index() {
                                                                     title right here!
                                                                 </p>
                                                                 <a href="/">
-                                                                    <i className="fa-solid fa-plus" />
+                                                                    <i className="fa-solid fa-plus"></i>
                                                                     Read More
                                                                 </a>
                                                             </div>
@@ -600,7 +615,7 @@ export default function Index() {
                     <div className="features-goto">
                         <a href="/">
                             Go to Game Description{" "}
-                            <i className="fa-solid fa-angles-right" />
+                            <i className="fa-solid fa-angles-right"></i>
                         </a>
                     </div>
                     {/*end go to link*/}
@@ -654,7 +669,7 @@ export default function Index() {
                                                 <span>C</span>9870
                                             </span>
                                             <div className="buy">
-                                                <i className="fa-solid fa-cart-shopping" />
+                                                <i className="fa-solid fa-cart-shopping"></i>
                                                 Buy
                                             </div>
                                         </div>
@@ -680,7 +695,7 @@ export default function Index() {
                                                 <span>C</span>9870
                                             </span>
                                             <div className="buy">
-                                                <i className="fa-solid fa-cart-shopping" />
+                                                <i className="fa-solid fa-cart-shopping"></i>
                                                 Buy
                                             </div>
                                         </div>
@@ -705,7 +720,7 @@ export default function Index() {
                                                 <span>C</span>9870
                                             </span>
                                             <div className="buy">
-                                                <i className="fa-solid fa-cart-shopping" />
+                                                <i className="fa-solid fa-cart-shopping"></i>
                                                 Buy
                                             </div>
                                         </div>
@@ -730,7 +745,7 @@ export default function Index() {
                                                 <span>C</span>9870
                                             </span>
                                             <div className="buy">
-                                                <i className="fa-solid fa-cart-shopping" />
+                                                <i className="fa-solid fa-cart-shopping"></i>
                                                 Buy
                                             </div>
                                         </div>
@@ -744,7 +759,7 @@ export default function Index() {
                         <div className="store-goto">
                             <a href="/" target="_blank">
                                 Go to Full Store{" "}
-                                <i className="fa-solid fa-angles-right" />
+                                <i className="fa-solid fa-angles-right"></i>
                             </a>
                         </div>
                         {/*end go to link*/}
@@ -774,7 +789,7 @@ export default function Index() {
                     <div className="playnow-create">
                         <a href="/" target="_blank">
                             Create your master account
-                            <i className="fa-solid fa-angles-right" />
+                            <i className="fa-solid fa-angles-right"></i>
                         </a>
                     </div>
                 </div>
