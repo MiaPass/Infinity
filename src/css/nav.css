@@ -295,6 +295,7 @@ nav {
 
 .nav-list .logo img {
     width: 43px;
+    height: fit-content;
 }
 
 .nav-list .logo2 {

@@ -1325,7 +1325,7 @@ footer .footer-copyright .copyright p {
 
 .effect {
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
     -webkit-animation: fly 10s infinite linear;
     animation: fly 10s infinite linear;
@@ -1333,7 +1333,7 @@ footer .footer-copyright .copyright p {
 
 .effect2 {
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
     -webkit-animation: fly 10s 5s infinite linear;
     animation: fly 10s 5s infinite linear;
@@ -1469,6 +1469,7 @@ footer .footer-copyright .copyright p {
         height: 50px;
         font-size: 15px;
     }
+
     .playnow {
         height: 100%;
         padding: 80px 0px 80px 0px;

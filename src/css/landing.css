@@ -1,0 +1,372 @@
+#body {
+    background: #000;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#body .wrapper {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 320px;
+    background: #000 url(../images/bg/bgLanding.jpg) no-repeat 50%;
+    background-size: cover;
+}
+
+#body .wrapper .content {
+    min-height: 100vh;
+    min-width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 5;
+    justify-content: center;
+    overflow: hidden;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#body .wrapper footer,
+#body .wrapper .content .header {
+    width: 100%;
+    text-align: center;
+}
+
+#body .wrapper .content .header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+#body .wrapper .content .header img {
+    margin-top: -3%;
+    margin-bottom: 25%;
+    height: 200px;
+}
+
+#body .wrapper .content .header a {
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#body .wrapper .content .header a:hover {
+    filter: brightness(120%);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#body .wrapper .content .header h1 {
+    font-size: 35px;
+    font-family: "Philosopher";
+    text-shadow: #000 1px;
+    color: rgb(246, 177, 82);
+    font-weight: bold;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 0px 5px 5.74px rgb(51 46 39 / 32%);
+    margin: -10px auto 0px;
+}
+
+#body .wrapper .content .header p {
+    font-size: 20px;
+    font-family: "DINNextW1G";
+    color: #fcfdff;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 0px 2px 2.65px rgba(51, 46, 39, 0.32);
+    margin: 0px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#body .wrapper .content .block_servers {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1044px;
+    margin: 40px 0px 24px;
+    flex-wrap: wrap;
+}
+
+#body .wrapper .content main {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-left: -35%;
+}
+
+#body .wrapper .content .block_servers a {
+    display: flex;
+    height: 415px;
+    width: 240px;
+    position: relative;
+    text-align: center;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    padding-bottom: 35px;
+    margin: 0px 54px 0px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#body .wrapper .content .block_servers a.block_server1 .image_server {
+    left: -92px;
+    width: 352px;
+}
+
+#body .wrapper .content .block_servers a.block_server2 .image_server {
+    left: -75px;
+    width: 432px;
+}
+
+#body .wrapper .content .block_servers a.block_server3 .image_server {
+    left: -43px;
+    width: 277px;
+}
+
+#body .wrapper .content .block_servers a .experience {
+    width: 100%;
+    font-size: 31px;
+    font-family: "Philosopher";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 0px 12px 18px rgba(51, 46, 39, 0.68);
+    margin-bottom: 10px;
+}
+
+#body .wrapper .content .block_servers a:hover {
+    transform: translateY(-15px);
+    filter: brightness(120%);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#body .wrapper .content .block_servers a .line_server {
+    margin: auto;
+}
+
+#body .wrapper .content .block_servers a .name {
+    font-size: 18px;
+    font-family: "Philosopher";
+    color: rgb(207, 150, 74);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    margin: 16px 0px 4px;
+}
+
+#body .wrapper .content .block_servers a p {
+    font-size: 17px;
+    font-family: "DINNextW1G";
+    color: #bcc0c7;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 0px 2px 2.65px rgba(51, 46, 39, 0.32);
+    margin: 0px;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0px 30px;
+}
+
+#body .wrapper .content .block_servers a .image_server {
+    position: absolute;
+    z-index: -1;
+    margin: auto;
+    pointer-events: none;
+}
+
+#body .wrapper footer {
+    width: 100%;
+    padding-bottom: 30px;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#body .wrapper footer p:nth-child(1) {
+    font-size: 18px;
+    font-family: "DINNextW1G";
+    color: #fcfdff;
+    font-weight: bold;
+    line-height: 1.75;
+}
+
+#body .wrapper footer p {
+    margin: 0px;
+}
+
+#body .wrapper footer p:nth-child(2) {
+    font-size: 13px;
+    font-family: "DINNextW1G";
+    color: #fcfdffb3;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+#body .wrapper footer a {
+    display: flex;
+    text-align: left;
+    margin: auto;
+    align-items: center;
+    width: max-content;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 30px;
+}
+
+#body .wrapper footer a span {
+    font-size: 15px;
+    font-family: "DINNextW1G";
+    color: rgba(252, 253, 255, 0.502);
+    line-height: 1.2;
+    text-align: left;
+    text-shadow: 0px 2px 2.65px rgba(51, 46, 39, 0.32);
+}
+
+#body .wrapper footer a img {
+    margin-right: 14px;
+}
+
+#body .wrapper footer a:hover {
+    opacity: 1;
+}
+
+@media (max-width: 1025px) {
+    #body .wrapper .content .header img {
+        height: auto;
+        width: 300px;
+    }
+    #body .wrapper .content .header,
+    #body .wrapper .content footer {
+        padding: 0px 15px;
+    }
+    #body .wrapper .content .header h1 {
+        font-size: 25px;
+    }
+
+    #body .wrapper .content .header p {
+        font-size: 15px;
+    }
+
+    #body .wrapper .content .block_servers a {
+        margin-bottom: 30px;
+    }
+    #body .wrapper .content footer {
+        padding-bottom: 15px;
+    }
+}
+@media (max-height: 900px) {
+    #body .wrapper footer {
+        padding-bottom: 15px;
+    }
+
+    #body .wrapper footer a {
+        margin-top: 15px;
+    }
+}
+
+@media (max-height: 870px) {
+    #body .wrapper .content .header img {
+        height: 120px;
+    }
+
+    #body .wrapper .content .header h1 {
+        font-size: 25px;
+    }
+
+    #body .wrapper .content .header p {
+        font-size: 14px;
+    }
+
+    #body .wrapper .content .block_servers a {
+        display: flex;
+        height: 297px;
+        width: 172px;
+        padding-bottom: 10px;
+    }
+
+    #body .wrapper .content .block_servers {
+        margin: 20px 0px;
+    }
+
+    #body .wrapper footer {
+        padding-bottom: 15px;
+    }
+
+    #body .wrapper footer a {
+        margin-top: 15px;
+    }
+
+    #body .wrapper .content .block_servers a.block_server1 .image_server {
+        left: -67px;
+        width: 255px;
+    }
+
+    #body .wrapper .content .block_servers a.block_server2 .image_server {
+        left: -54px;
+        width: 309px;
+    }
+
+    #body .wrapper .content .block_servers a.block_server3 .image_server {
+        left: -29px;
+        width: 200px;
+    }
+
+    #body .wrapper .content .block_servers a .line_server {
+        margin: auto;
+        width: 107px;
+    }
+
+    #body .wrapper .content .block_servers a .name {
+        font-size: 15px;
+    }
+
+    #body .wrapper .content .block_servers a p {
+        font-size: 13px;
+
+        padding: 0px 20px 15px;
+    }
+
+    #body .wrapper .content .block_servers a .experience {
+        font-size: 20px;
+    }
+}

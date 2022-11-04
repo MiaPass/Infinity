@@ -167,6 +167,7 @@
 }
 .swiper-virtual .swiper-slide {
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     transform: translateZ(0);
 }
 .swiper-virtual.swiper-css-mode .swiper-wrapper::after {
@@ -217,7 +218,7 @@
 .swiper-navigation-disabled .swiper-button-prev {
     display: none !important;
 }
-.swiper-button-next:after,
+/* .swiper-button-next:after,
 .swiper-button-prev:after {
     font-family: swiper-icons;
     font-size: var(--swiper-navigation-size);
@@ -225,7 +226,7 @@
     letter-spacing: 0;
     font-variant: initial;
     line-height: 1;
-}
+} */
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
     left: 10px;
@@ -414,6 +415,7 @@ button.swiper-pagination-bullet {
     border-radius: 10px;
     position: relative;
     -ms-touch-action: none;
+    touch-action: none;
     background: rgba(0, 0, 0, 0.1);
 }
 .swiper-scrollbar-disabled > .swiper-scrollbar,
@@ -573,6 +575,7 @@ button.swiper-pagination-bullet {
 .swiper-cube .swiper-slide-shadow-top {
     z-index: 0;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .swiper-cube .swiper-cube-shadow {
     position: absolute;
