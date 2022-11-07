@@ -4,12 +4,11 @@ import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper/core";
-import { Virtual, Navigation, Pagination } from "swiper";
+import { Virtual, Mousewheel, Navigation, Autoplay } from "swiper";
 
 /* JS */
 
 import "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js";
-import "../../js/swiper-bundle.min";
 
 /* IMAGES */
 
@@ -20,23 +19,22 @@ import features3 from "../../images/features/3.jpg";
 /* CSS */
 
 import "../../css/swiper-bundle.min.css";
-import "swiper/css";
 
-SwiperCore.use([Virtual, Navigation, Pagination]);
+SwiperCore.use([Virtual, Navigation, Mousewheel, Autoplay]);
 
 export default function FeaturesSwiperContent() {
     return (
         <Swiper
-            className="swiper-wrapper"
+            // className="swiper-wrapper"
+            mousewheel
             spaceBetween={10}
-            slidesPerView={3}
             watchOverflow
+            slidesPerView={3}
             navigation={{
                 prevEl: ".features-content-prev",
                 nextEl: ".features-content-next",
             }}
             watchSlidesProgress
-            virtual
             breakpoints={{
                 300: {
                     slidesPerView: 1,
@@ -193,35 +191,6 @@ export default function FeaturesSwiperContent() {
                 </div>
             </SwiperSlide>
             {/*end slide 5*/}
-            {/*slide 6*/}
-            <SwiperSlide className="swiper-slide">
-                <div className="features-content-slide">
-                    <div className="div"></div>
-                    <div className="div1">
-                        <div className="div2">
-                            <div className="div3">
-                                <div
-                                    className="div4"
-                                    style={{
-                                        background: `url(${features3}) center no-repeat`,
-                                    }}
-                                >
-                                    <div className="div5">
-                                        <div className="features-content-slide-info">
-                                            <p>Some feature title right here!</p>
-                                            <a href="/">
-                                                <i className="fa-solid fa-plus"></i>
-                                                Read More
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/*end slide 6*/}
-            </SwiperSlide>
         </Swiper>
     );
 }

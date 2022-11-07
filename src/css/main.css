@@ -287,29 +287,25 @@ header .header-features {
     margin: 0 auto;
 }
 
-header .header-features .swiper-wrapper {
+header .header-features .swiper {
     width: 100%;
     margin: 0 auto;
 }
 
-header .header-features .swiper-wrapper .swiper-slide {
+header .header-features .swiper .swiper-slide {
     width: 100%;
 }
 
-header
-    .header-features
-    .swiper-wrapper
-    .swiper-slide:hover
-    .header-features-content-icon {
+header .header-features .swiper .swiper-slide:hover .header-features-content-icon {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-header .header-features .swiper-wrapper .swiper-slide:hover p {
+header .header-features .swiper .swiper-slide:hover p {
     color: white;
 }
 
-header .header-features .swiper-wrapper .swiper-slide .header-features-content-icon {
+header .header-features .swiper .swiper-slide .header-features-content-icon {
     width: 100%;
     height: 120px;
     display: -webkit-box;
@@ -325,19 +321,14 @@ header .header-features .swiper-wrapper .swiper-slide .header-features-content-i
     transition: 0.5s;
 }
 
-header
-    .header-features
-    .swiper-wrapper
-    .swiper-slide
-    .header-features-content-icon
-    img {
+header .header-features .swiper .swiper-slide .header-features-content-icon img {
     -webkit-animation: float 2s infinite ease-in-out;
     animation: float 2s infinite ease-in-out;
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
-header .header-features .swiper-wrapper .swiper-slide p {
+header .header-features .swiper .swiper-slide p {
     color: rgba(255, 255, 255, 0.493);
     font-weight: 300;
     -webkit-transition: 0.5s;
@@ -655,6 +646,7 @@ header .header-features .swiper-wrapper .swiper-slide p {
 }
 
 .middle .features {
+    overflow: visible;
     padding-bottom: 130px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
@@ -717,8 +709,15 @@ header .header-features .swiper-wrapper .swiper-slide p {
 }
 
 .middle .features .features-content {
+    /* width: 1270px; */
+    margin: auto;
     position: relative;
     margin-bottom: 80px;
+    overflow: visible;
+}
+
+.swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-watch-progress.swiper-backface-hidden {
+    overflow: visible !important;
 }
 
 .middle .features .features-content .swiper-button-disabled {
@@ -1236,9 +1235,9 @@ footer .footer-copyright .un1k a {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: left;
+    -ms-flex-align: left;
+    align-items: left;
     text-decoration: none;
     -webkit-transition: 0.5s;
     transition: 0.5s;

@@ -2,6 +2,7 @@ import React from "react";
 
 import imagesSymbol from "../../images/symbol.png";
 import imagesUn1k from "../../images/un1k.png";
+import imagesGithub from "../../images/githublogo.png";
 
 export default function Footer() {
     return (
@@ -18,7 +19,7 @@ export default function Footer() {
                     </a>
                 </div>
                 <div className="footer-copyright">
-                    <div className="un1k">
+                    <div className="un1k" style={{ marginRight: 70, width: 150 }}>
                         <a
                             href="https://un1k.digital"
                             target="_blank"
@@ -29,6 +30,40 @@ export default function Footer() {
                                 Developed by
                                 <br />
                                 un1k.digital
+                            </span>
+                        </a>
+                    </div>
+                    <div className="un1k">
+                        <a
+                            href="https://github.com/MiaPass"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                src={imagesGithub}
+                                alt="../../images/githublogo.png"
+                            />
+                            <span>
+                                Frontend React Developer:
+                                <br />
+                                /MiaPass
+                            </span>
+                        </a>
+                    </div>
+                    <div className="un1k">
+                        <a
+                            href="https://github.com/Rutito2010"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                src={imagesGithub}
+                                alt="../../images/githublogo.png"
+                            />
+                            <span>
+                                Backend Nodejs Developer:
+                                <br />
+                                /Rutito2010
                             </span>
                         </a>
                     </div>

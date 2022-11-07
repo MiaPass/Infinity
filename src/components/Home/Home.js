@@ -125,6 +125,7 @@ export default function Home() {
                             <img src={imagesSymbol} alt="../images/symbol.png" />
                             <p>Infinity Game Mechanics</p>
                         </div>
+
                         {/*features slide*/}
                         <div className="features-content">
                             {/*controls*/}
@@ -138,18 +139,18 @@ export default function Home() {
 
                             <FeaturesSwiperContent />
                         </div>
-                    </div>
-                    {/*end features slides*/}
-                    {/*go to link*/}
-                    <div className="features-goto">
-                        <a href="/">
-                            Go to Game Description{" "}
-                            <i className="fa-solid fa-angles-right"></i>
-                        </a>
-                    </div>
-                    {/*end go to link*/}
-                </div>
 
+                        {/*end features slides*/}
+                        {/*go to link*/}
+                        <div className="features-goto">
+                            <a href="/">
+                                Go to Game Description{" "}
+                                <i className="fa-solid fa-angles-right"></i>
+                            </a>
+                        </div>
+                        {/*end go to link*/}
+                    </div>
+                </div>
                 {/*store*/}
                 <div className="store">
                     <div className="container">
