@@ -114,7 +114,7 @@ a {
     flex-grow: 1;
     flex-wrap: wrap;
     align-content: center;
-    margin-left: -35%;
+    /* margin-left: -35%; */
 }
 
 #body .wrapper .content .block_servers a {
