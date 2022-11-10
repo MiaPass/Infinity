@@ -74,16 +74,15 @@ a {
 }
 
 #body .wrapper .content .header h1 {
-    font-size: 35px;
+    font-size: 46px;
     font-family: "Philosopher";
-    text-shadow: #000 1px;
-    color: rgb(246, 177, 82);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 12px rgb(246, 177, 82);
     font-weight: bold;
     font-variant: small-caps;
     text-transform: uppercase;
     line-height: 1.2;
     text-align: center;
-    text-shadow: 0px 5px 5.74px rgb(51 46 39 / 32%);
     margin: -10px auto 0px;
 }
 
