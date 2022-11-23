@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 /* COMPONENTS */
 
@@ -8,6 +8,9 @@ import Social from "../Social/Social";
 import Servers from "../Servers/Servers";
 import Footer from "../Footer/Footer";
 import SparklesEffect from "../SparklesEffect/SparklesEffect";
+import PayWPayPal from "../Forms/Donations/PayPal";
+import PayWMPago from "../Forms/Donations/MercadoPago";
+import PayWStripe from "../Forms/Donations/Stripe";
 
 /* AOS - ANIMATION 1 */
 
@@ -44,6 +47,17 @@ export default function About() {
 
     // window.onload = loaded();
     $(window).trigger("scroll", scrolled());
+
+    const [payType, setType] = useState("none");
+
+    const handleClick = (e, type) => {
+        e.preventDefault();
+        if (payType === type) {
+            setType("none");
+        } else {
+            setType(type);
+        }
+    };
 
     return (
         <div>
@@ -121,41 +135,57 @@ export default function About() {
                                     src={imagesSymbol}
                                     alt="../../images/symbol.png"
                                 />
-                                Some information with Table
+                                Donation
                             </h1>
-                            <p>
-                                <strong>
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Atque, labore!
-                                </strong>
-                            </p>
-                            <div className="table">
-                                <div>
-                                    <div className="title">Table title</div>
-                                    <div>Table 1</div>
-                                    <div>Table 2</div>
-                                    <div>Table 3</div>
-                                    <div>Table 4</div>
-                                    <div>Table 5</div>
-                                    <div>Table 6</div>
+
+                            <div>
+                                <div className="table">
+                                    <div>
+                                        {payType !== "PayPal" ? (
+                                            <button
+                                                className="title"
+                                                onClick={(e) =>
+                                                    handleClick(e, "PayPal")
+                                                }
+                                            >
+                                                PayPal
+                                            </button>
+                                        ) : (
+                                            <PayWPayPal />
+                                        )}
+                                    </div>
                                 </div>
-                                <div>
-                                    <div className="title">Table title</div>
-                                    <div>Table 1</div>
-                                    <div>Table 2</div>
-                                    <div>Table 3</div>
-                                    <div>Table 4</div>
-                                    <div>Table 5</div>
-                                    <div>Table 6</div>
+                                <div className="table">
+                                    <div>
+                                        {payType !== "Mercado Pago" ? (
+                                            <button
+                                                className="title"
+                                                onClick={(e) =>
+                                                    handleClick(e, "Mercado Pago")
+                                                }
+                                            >
+                                                Mercado Pago
+                                            </button>
+                                        ) : (
+                                            <PayWMPago />
+                                        )}
+                                    </div>
                                 </div>
-                                <div>
-                                    <div className="title">Table title</div>
-                                    <div>Table 1</div>
-                                    <div>Table 2</div>
-                                    <div>Table 3</div>
-                                    <div>Table 4</div>
-                                    <div>Table 5</div>
-                                    <div>Table 6</div>
+                                <div className="table">
+                                    <div>
+                                        {payType !== "Stripe" ? (
+                                            <button
+                                                className="title"
+                                                onClick={(e) =>
+                                                    handleClick(e, "Stripe")
+                                                }
+                                            >
+                                                Stripe
+                                            </button>
+                                        ) : (
+                                            <PayWStripe />
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>
