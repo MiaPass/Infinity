@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { PayPalButton } from "react-paypal-button-v2";
@@ -13,7 +13,7 @@ export default function PayWPayPal() {
     const dispatch = useDispatch();
 
     const [donationAmountPayPal, setDonationAmountPayPal] = useState(1);
-
+    const [render, setRender] = useState("hidden");
     const [formpp, setForm] = useState({
         amount: "",
         email: "",
@@ -41,6 +41,10 @@ export default function PayWPayPal() {
 
         return errors;
     };
+
+    useEffect(() => {
+        setTimeout(() => setRender("visible"), 250);
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -90,49 +94,53 @@ export default function PayWPayPal() {
     try {
         return (
             <center className="centerCenter">
-                <form
-                    className="create-div-container"
-                    onSubmit={(e) => handleSubmit(e)}
-                >
-                    <input
-                        className="from-title"
-                        name="amount"
-                        type="number"
-                        value={formpp.amount}
-                        placeholder=" Amount..."
-                        onChange={(e) => handleInput(e)}
-                    />
-
-                    <input
-                        name="email"
-                        type="email"
-                        value={formpp.email}
-                        placeholder=" user@mail.com"
-                        onChange={(e) => handleInput(e)}
-                    />
-
-                    <div>
-                        <PayPalButton
-                            amount={donationAmountPayPal}
-                            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                            onSuccess={(details, data) => {
-                                console.log(formpp);
-                                // OPTIONAL: Call your server to save the transaction
-
-                                dispatch(paywPayPal(formpp));
-                                setTimeout(() => {
-                                    window.location.bref =
-                                        "http://localhost:3000/success";
-                                }, 1000);
-                            }}
-                            options={{
-                                clientId:
-                                    "AcsldefjQXoml-Leg34FhsFvCMYZ-_eseJP0-UBaZ3iPIfo-FxfM4nQ6MAwJKJ5iMylMHnsVDcIZQp2r",
-                                // disableFunding: "credit,card",
-                            }}
+                {render === "hidden" ? (
+                    <span></span>
+                ) : (
+                    <form
+                        className="create-div-container"
+                        onSubmit={(e) => handleSubmit(e)}
+                    >
+                        <input
+                            className="from-title"
+                            name="amount"
+                            type="number"
+                            value={formpp.amount}
+                            placeholder=" Amount..."
+                            onChange={(e) => handleInput(e)}
                         />
-                    </div>
-                </form>
+
+                        <input
+                            name="email"
+                            type="email"
+                            value={formpp.email}
+                            placeholder=" user@mail.com"
+                            onChange={(e) => handleInput(e)}
+                        />
+
+                        <div>
+                            <PayPalButton
+                                amount={donationAmountPayPal}
+                                // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                                onSuccess={(details, data) => {
+                                    console.log(formpp);
+                                    // OPTIONAL: Call your server to save the transaction
+
+                                    dispatch(paywPayPal(formpp));
+                                    setTimeout(() => {
+                                        window.location.bref =
+                                            "http://localhost:3000/success";
+                                    }, 1000);
+                                }}
+                                options={{
+                                    clientId:
+                                        "AcsldefjQXoml-Leg34FhsFvCMYZ-_eseJP0-UBaZ3iPIfo-FxfM4nQ6MAwJKJ5iMylMHnsVDcIZQp2r",
+                                    // disableFunding: "credit,card",
+                                }}
+                            />
+                        </div>
+                    </form>
+                )}
             </center>
         );
     } catch (error) {

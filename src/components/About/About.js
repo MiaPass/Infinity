@@ -139,13 +139,7 @@ export default function About() {
                             </h1>
 
                             <div>
-                                <div
-                                    className={
-                                        payType === "none"
-                                            ? "tableInactive"
-                                            : "tableActive"
-                                    }
-                                >
+                                <div className="table">
                                     <div>
                                         <button
                                             style={{
@@ -160,13 +154,14 @@ export default function About() {
                                         >
                                             PayPal
                                         </button>
+
                                         {payType !== "PayPal" ? (
                                             <span
                                                 style={{
                                                     visibility: "hidden",
                                                 }}
                                             >
-                                                <PayWPayPal />
+                                                {/* <PayWPayPal /> */}
                                             </span>
                                         ) : (
                                             <span
@@ -197,13 +192,14 @@ export default function About() {
                                         >
                                             Mercado Pago
                                         </button>
+
                                         {payType !== "Mercado Pago" ? (
                                             <span
                                                 style={{
                                                     visibility: "hidden",
                                                 }}
                                             >
-                                                <PayWMPago />
+                                                {/* <PayWMPago /> */}
                                             </span>
                                         ) : (
                                             <span
@@ -232,13 +228,14 @@ export default function About() {
                                         >
                                             Stripe
                                         </button>
+
                                         {payType !== "Stripe" ? (
                                             <span
                                                 style={{
                                                     visibility: "hidden",
                                                 }}
                                             >
-                                                <PayWStripe />
+                                                {/* <PayWStripe /> */}
                                             </span>
                                         ) : (
                                             <span

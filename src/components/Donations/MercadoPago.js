@@ -27,6 +27,8 @@ export default function PayWMPago() {
         }
     );
 
+    const [render, setRender] = useState("hidden");
+
     useEffect(() => {
         // console.log(newMPago);
         const button = document.getElementsByClassName("mercadopago-button");
@@ -41,6 +43,8 @@ export default function PayWMPago() {
                 },
             });
         }
+
+        setTimeout(() => setRender("visible"), 250);
     }, [mercadopago, newMPago]);
 
     const [checkButton, setcheckButton] = useState(false);
@@ -114,39 +118,46 @@ export default function PayWMPago() {
     try {
         return (
             <center className="centerCenter">
-                <form
-                    className="create-div-container"
-                    onSubmit={(e) => handleSubmit(e)}
-                >
-                    <input
-                        className="form-title"
-                        name="amount"
-                        type="number"
-                        value={formmp.amount}
-                        placeholder=" Amount..."
-                        onChange={(e) => handleInput(e)}
-                    />
+                {render === "hidden" ? (
+                    <span></span>
+                ) : (
+                    <form
+                        className="create-div-container"
+                        onSubmit={(e) => handleSubmit(e)}
+                    >
+                        <input
+                            className="form-title"
+                            name="amount"
+                            type="number"
+                            value={formmp.amount}
+                            placeholder=" Amount..."
+                            onChange={(e) => handleInput(e)}
+                        />
 
-                    <input
-                        name="email"
-                        type="email"
-                        value={formmp.email}
-                        placeholder=" user@mail.com"
-                        onChange={(e) => handleInput(e)}
-                    />
+                        <input
+                            name="email"
+                            type="email"
+                            value={formmp.email}
+                            placeholder=" user@mail.com"
+                            onChange={(e) => handleInput(e)}
+                        />
 
-                    {checkButton === true ? (
-                        <div className="button-checkout" id="button-checkout"></div>
-                    ) : (
-                        <button
-                            id="form-submit"
-                            type="submit"
-                            onSubmit={(e) => handleSubmit(e)}
-                        >
-                            Checkout
-                        </button>
-                    )}
-                </form>
+                        {checkButton === true ? (
+                            <div
+                                className="button-checkout"
+                                id="button-checkout"
+                            ></div>
+                        ) : (
+                            <button
+                                id="form-submit"
+                                type="submit"
+                                onSubmit={(e) => handleSubmit(e)}
+                            >
+                                Checkout
+                            </button>
+                        )}
+                    </form>
+                )}
             </center>
         );
     } catch (error) {

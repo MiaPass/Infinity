@@ -306,26 +306,7 @@
     margin-bottom: 40px;
 }
 
-.inner .inner-content .topic .tableInactive {
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    overflow: hidden;
-    background-color: #130f0a;
-    border-radius: 6px;
-    margin-bottom: 40px;
-    justify-content: space-around;
-    height: 142px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 270px 270px 270px;
-    grid-template-rows: 100px 200px;
-    gap: 40px 40px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "title title title"
-        "form form form";
-}
-
-.inner .inner-content .topic .tableActive {
+.inner .inner-content .topic .table {
     border: 1px solid rgba(255, 255, 255, 0.04);
     overflow: hidden;
     background-color: #130f0a;
@@ -341,15 +322,40 @@
     grid-auto-flow: row;
     grid-template-areas:
         "title title title"
-        "form form form";
+        "form1 form2 form3";
 }
 
 .title {
     grid-area: title;
 }
 
-.form {
-    grid-area: form;
+.form1Active {
+    grid-area: form1;
+    visibility: visible;
+}
+
+.form2Active {
+    grid-area: form2;
+    visibility: visible;
+}
+
+.form3Active {
+    grid-area: form3;
+    visibility: visible;
+}
+.form1Inactive {
+    grid-area: form1;
+    visibility: hidden;
+}
+
+.form2Inactive {
+    grid-area: form2;
+    visibility: hidden;
+}
+
+.form3Inactive {
+    grid-area: form3;
+    visibility: hidden;
 }
 
 .inner .inner-content .topic .table {

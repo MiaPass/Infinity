@@ -3,10 +3,15 @@ import React, { useState, useEffect } from "react";
 import "../../css/donations.css";
 
 const ProductDisplay = () => {
+    const [render, setRender] = useState("hidden");
     const [formstripe, setForm] = useState({
         amount: "",
         email: "",
         description: "Donation",
+    });
+
+    useEffect(() => {
+        setTimeout(() => setRender("visible"), 250);
     });
 
     const handleInput = (e) => {
@@ -19,32 +24,36 @@ const ProductDisplay = () => {
     };
     return (
         <center className="centerCenter">
-            <form
-                className="create-div-container"
-                action="http://localhost:8080/stripe/createDonation"
-                method="POST"
-            >
-                <input
-                    className="form-title"
-                    name="amount"
-                    type="number"
-                    value={formstripe.amount}
-                    placeholder=" Amount..."
-                    onChange={(e) => handleInput(e)}
-                />
+            {render === "hidden" ? (
+                <span></span>
+            ) : (
+                <form
+                    className="create-div-container"
+                    action="http://localhost:8080/stripe/createDonation"
+                    method="POST"
+                >
+                    <input
+                        className="form-title"
+                        name="amount"
+                        type="number"
+                        value={formstripe.amount}
+                        placeholder=" Amount..."
+                        onChange={(e) => handleInput(e)}
+                    />
 
-                <input
-                    name="email"
-                    type="email"
-                    value={formstripe.email}
-                    placeholder=" user@mail.com"
-                    onChange={(e) => handleInput(e)}
-                />
+                    <input
+                        name="email"
+                        type="email"
+                        value={formstripe.email}
+                        placeholder=" user@mail.com"
+                        onChange={(e) => handleInput(e)}
+                    />
 
-                <button id="form-submit" type="submit">
-                    Checkout
-                </button>
-            </form>
+                    <button id="form-submit" type="submit">
+                        Checkout
+                    </button>
+                </form>
+            )}
         </center>
     );
 };

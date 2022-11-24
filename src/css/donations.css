@@ -1,5 +1,5 @@
 form {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 input {
@@ -50,4 +50,9 @@ input {
 
 #form-submit:hover {
     color: #db9e35;
+}
+
+.centerCenter div {
+    width: 280px;
+    margin-left: -5%;
 }
