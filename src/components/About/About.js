@@ -8,9 +8,9 @@ import Social from "../Social/Social";
 import Servers from "../Servers/Servers";
 import Footer from "../Footer/Footer";
 import SparklesEffect from "../SparklesEffect/SparklesEffect";
-import PayWPayPal from "../Forms/Donations/PayPal";
-import PayWMPago from "../Forms/Donations/MercadoPago";
-import PayWStripe from "../Forms/Donations/Stripe";
+import PayWPayPal from "../Donations/PayPal";
+import PayWMPago from "../Donations/MercadoPago";
+import PayWStripe from "../Donations/Stripe";
 
 /* AOS - ANIMATION 1 */
 
@@ -139,51 +139,118 @@ export default function About() {
                             </h1>
 
                             <div>
-                                <div className="table">
+                                <div
+                                    className={
+                                        payType === "none"
+                                            ? "tableInactive"
+                                            : "tableActive"
+                                    }
+                                >
                                     <div>
+                                        <button
+                                            style={{
+                                                marginTop: 30,
+                                            }}
+                                            className={
+                                                payType === "PayPal"
+                                                    ? "titleActive"
+                                                    : "titleInactive"
+                                            }
+                                            onClick={(e) => handleClick(e, "PayPal")}
+                                        >
+                                            PayPal
+                                        </button>
                                         {payType !== "PayPal" ? (
-                                            <button
-                                                className="title"
-                                                onClick={(e) =>
-                                                    handleClick(e, "PayPal")
-                                                }
+                                            <span
+                                                style={{
+                                                    visibility: "hidden",
+                                                }}
                                             >
-                                                PayPal
-                                            </button>
+                                                <PayWPayPal />
+                                            </span>
                                         ) : (
-                                            <PayWPayPal />
+                                            <span
+                                                style={{
+                                                    visibility: "visible",
+
+                                                    marginTop: 10,
+                                                }}
+                                            >
+                                                <PayWPayPal />
+                                            </span>
                                         )}
                                     </div>
-                                </div>
-                                <div className="table">
+
                                     <div>
+                                        <button
+                                            style={{
+                                                marginTop: 30,
+                                            }}
+                                            className={
+                                                payType === "Mercado Pago"
+                                                    ? "titleActive"
+                                                    : "titleInactive"
+                                            }
+                                            onClick={(e) =>
+                                                handleClick(e, "Mercado Pago")
+                                            }
+                                        >
+                                            Mercado Pago
+                                        </button>
                                         {payType !== "Mercado Pago" ? (
-                                            <button
-                                                className="title"
-                                                onClick={(e) =>
-                                                    handleClick(e, "Mercado Pago")
-                                                }
+                                            <span
+                                                style={{
+                                                    visibility: "hidden",
+                                                }}
                                             >
-                                                Mercado Pago
-                                            </button>
+                                                <PayWMPago />
+                                            </span>
                                         ) : (
-                                            <PayWMPago />
+                                            <span
+                                                style={{
+                                                    visibility: "visible",
+
+                                                    marginTop: 30,
+                                                }}
+                                            >
+                                                <PayWMPago />
+                                            </span>
                                         )}
                                     </div>
-                                </div>
-                                <div className="table">
+
                                     <div>
+                                        <button
+                                            style={{
+                                                marginTop: 30,
+                                            }}
+                                            className={
+                                                payType === "Stripe"
+                                                    ? "titleActive"
+                                                    : "titleInactive"
+                                            }
+                                            onClick={(e) => handleClick(e, "Stripe")}
+                                        >
+                                            Stripe
+                                        </button>
                                         {payType !== "Stripe" ? (
-                                            <button
-                                                className="title"
-                                                onClick={(e) =>
-                                                    handleClick(e, "Stripe")
-                                                }
+                                            <span
+                                                style={{
+                                                    visibility: "hidden",
+                                                }}
                                             >
-                                                Stripe
-                                            </button>
+                                                <PayWStripe />
+                                            </span>
                                         ) : (
-                                            <PayWStripe />
+                                            <span
+                                                style={{
+                                                    visibility: "visible",
+
+                                                    marginTop: 60,
+                                                    marginLeft: 50,
+                                                }}
+                                            >
+                                                <PayWStripe />
+                                            </span>
                                         )}
                                     </div>
                                 </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import "../../css/donations.css";
+
 const ProductDisplay = () => {
     const [formstripe, setForm] = useState({
         amount: "",
@@ -16,8 +18,7 @@ const ProductDisplay = () => {
         });
     };
     return (
-        <div>
-            <h2> Stripe </h2>
+        <center className="centerCenter">
             <form
                 className="create-div-container"
                 action="http://localhost:8080/stripe/createDonation"
@@ -26,12 +27,12 @@ const ProductDisplay = () => {
                 <input
                     className="form-title"
                     name="amount"
-                    type="text"
-                    value="price_1M46PsEgwlDrF1eoEuJsRxM4"
+                    type="number"
+                    value={formstripe.amount}
                     placeholder=" Amount..."
                     onChange={(e) => handleInput(e)}
                 />
-                {/* <hr /> */}
+
                 <input
                     name="email"
                     type="email"
@@ -40,10 +41,11 @@ const ProductDisplay = () => {
                     onChange={(e) => handleInput(e)}
                 />
 
-                {/* <hr /> */}
-                <button type="submit">Checkout</button>
+                <button id="form-submit" type="submit">
+                    Checkout
+                </button>
             </form>
-        </div>
+        </center>
     );
 };
 

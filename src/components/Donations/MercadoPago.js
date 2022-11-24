@@ -5,7 +5,9 @@ import { useMercadopago } from "react-sdk-mercadopago";
 
 import swal from "sweetalert";
 
-import { paywMPago } from "../../../redux/actions";
+import { paywMPago } from "../../redux/actions";
+
+import "../../css/donations.css";
 
 export default function PayWMPago() {
     const dispatch = useDispatch();
@@ -111,8 +113,7 @@ export default function PayWMPago() {
 
     try {
         return (
-            <div>
-                <h2> Mercado Pago </h2>
+            <center className="centerCenter">
                 <form
                     className="create-div-container"
                     onSubmit={(e) => handleSubmit(e)}
@@ -125,7 +126,7 @@ export default function PayWMPago() {
                         placeholder=" Amount..."
                         onChange={(e) => handleInput(e)}
                     />
-                    {/* <hr /> */}
+
                     <input
                         name="email"
                         type="email"
@@ -133,8 +134,6 @@ export default function PayWMPago() {
                         placeholder=" user@mail.com"
                         onChange={(e) => handleInput(e)}
                     />
-
-                    {/* <hr /> */}
 
                     {checkButton === true ? (
                         <div className="button-checkout" id="button-checkout"></div>
@@ -148,7 +147,7 @@ export default function PayWMPago() {
                         </button>
                     )}
                 </form>
-            </div>
+            </center>
         );
     } catch (error) {
         console.log(error);

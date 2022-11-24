@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm intall --force`
 
-For deprecated things
+For deprecated modules
 
 ### `npm start`
 

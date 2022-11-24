@@ -5,7 +5,9 @@ import { PayPalButton } from "react-paypal-button-v2";
 
 import swal from "sweetalert";
 
-import { paywPayPal } from "../../../redux/actions";
+import { paywPayPal } from "../../redux/actions";
+
+import "../../css/donations.css";
 
 export default function PayWPayPal() {
     const dispatch = useDispatch();
@@ -87,12 +89,7 @@ export default function PayWPayPal() {
 
     try {
         return (
-            <div
-                style={{
-                    marginTop: 20,
-                }}
-            >
-                <h2> PayPal </h2>
+            <center className="centerCenter">
                 <form
                     className="create-div-container"
                     onSubmit={(e) => handleSubmit(e)}
@@ -105,7 +102,7 @@ export default function PayWPayPal() {
                         placeholder=" Amount..."
                         onChange={(e) => handleInput(e)}
                     />
-                    {/* <hr /> */}
+
                     <input
                         name="email"
                         type="email"
@@ -114,23 +111,8 @@ export default function PayWPayPal() {
                         onChange={(e) => handleInput(e)}
                     />
 
-                    {/* <hr /> */}
-
-                    <span
-                        style={{
-                            maxHeight: 120,
-                            maxWidth: 250,
-                            // maxWidth: 100,
-                            // overflow: "hidden",
-                            paddingTop: -30,
-                            padding: 0,
-                            float: "right",
-                            marginTop: -30,
-                            // marginLeft: -70,
-                        }}
-                    >
+                    <div>
                         <PayPalButton
-                            style={{ padding: 0 }}
                             amount={donationAmountPayPal}
                             // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                             onSuccess={(details, data) => {
@@ -139,7 +121,7 @@ export default function PayWPayPal() {
 
                                 dispatch(paywPayPal(formpp));
                                 setTimeout(() => {
-                                    window.location.href =
+                                    window.location.bref =
                                         "http://localhost:3000/success";
                                 }, 1000);
                             }}
@@ -149,9 +131,9 @@ export default function PayWPayPal() {
                                 // disableFunding: "credit,card",
                             }}
                         />
-                    </span>
+                    </div>
                 </form>
-            </div>
+            </center>
         );
     } catch (error) {
         console.log(error);
