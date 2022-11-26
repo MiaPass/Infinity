@@ -6,10 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper/core";
 import { Virtual, Mousewheel, Navigation, Autoplay } from "swiper";
 
-/* JS */
-
-import "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js";
-
 /* IMAGES */
 
 import features1 from "../../images/features/1.jpg";

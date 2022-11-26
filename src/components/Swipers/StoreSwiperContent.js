@@ -6,10 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper/core";
 import { Virtual, Navigation, Pagination } from "swiper";
 
-/* JS */
-
-import "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js";
-
 /* IMAGES */
 
 import store1 from "../../images/store/1.png";
@@ -20,7 +16,6 @@ import store4 from "../../images/store/4.png";
 /* CSS */
 
 import "../../css/swiper-bundle.min.css";
-import "swiper/css";
 
 SwiperCore.use([Virtual, Navigation, Pagination]);
 

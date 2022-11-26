@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 /* COMPONENTS */
 
@@ -49,6 +49,12 @@ export default function Home() {
     });
 
     $(window).trigger("scroll", scrolled());
+
+    const [featureCont, setClass] = useState("features-container");
+
+    setTimeout(() => {
+        setClass("container");
+    }, 500);
 
     return (
         <div>
@@ -116,7 +122,7 @@ export default function Home() {
 
                 {/*features*/}
                 <div className="features">
-                    <div className="container">
+                    <div className={featureCont}>
                         <div
                             className="features-title"
                             data-aos="fade-up"

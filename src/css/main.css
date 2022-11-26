@@ -28,6 +28,12 @@ body {
     margin: 0 auto;
 }
 
+.features-container {
+    width: 1920px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
 .logo-header {
     position: absolute;
     pointer-events: none;
