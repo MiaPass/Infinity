@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/* import React, { useState, useEffect } from "react";
 
 import "../../css/donations.css";
 
@@ -84,3 +84,4 @@ export default function PayWStripe() {
 
     return message ? <Message message={message} /> : <ProductDisplay />;
 }
+*/
