@@ -8,9 +8,9 @@ import Social from "../Social/Social";
 import Servers from "../Servers/Servers";
 import Footer from "../Footer/Footer";
 import SparklesEffect from "../SparklesEffect/SparklesEffect";
-import PayWPayPal from "../Donations/PayPal";
+/*import PayWPayPal from "../Donations/PayPal";
 import PayWMPago from "../Donations/MercadoPago";
-import PayWStripe from "../Donations/Stripe";
+import PayWStripe from "../Donations/Stripe";*/
 
 /* AOS - ANIMATION 1 */
 
@@ -155,16 +155,16 @@ export default function About() {
                                             PayPal
                                         </button>
 
-                                        {payType !== "PayPal" ? (
+                                        /*{payType !== "PayPal" ? (
                                             <span
                                                 style={{
                                                     visibility: "hidden",
                                                 }}
                                             >
-                                                {/* <PayWPayPal /> */}
-                                            </span>
+                                               
+                                            </span>*/
                                         ) : (
-                                            <span
+                                           /* <span
                                                 style={{
                                                     visibility: "visible",
 
@@ -172,7 +172,7 @@ export default function About() {
                                                 }}
                                             >
                                                 <PayWPayPal />
-                                            </span>
+                                            </span>*/
                                         )}
                                     </div>
 
@@ -193,16 +193,16 @@ export default function About() {
                                             Mercado Pago
                                         </button>
 
-                                        {payType !== "Mercado Pago" ? (
+                                      /*  {payType !== "Mercado Pago" ? (
                                             <span
                                                 style={{
                                                     visibility: "hidden",
                                                 }}
                                             >
-                                                {/* <PayWMPago /> */}
-                                            </span>
+                                                
+                                            </span>*/
                                         ) : (
-                                            <span
+                                           /* <span
                                                 style={{
                                                     visibility: "visible",
 
@@ -210,7 +210,7 @@ export default function About() {
                                                 }}
                                             >
                                                 <PayWMPago />
-                                            </span>
+                                            </span>*/
                                         )}
                                     </div>
 
@@ -229,16 +229,15 @@ export default function About() {
                                             Stripe
                                         </button>
 
-                                        {payType !== "Stripe" ? (
+                                       /* {payType !== "Stripe" ? (
                                             <span
                                                 style={{
                                                     visibility: "hidden",
                                                 }}
-                                            >
-                                                {/* <PayWStripe /> */}
-                                            </span>
+                                            >   
+                                            </span>*/
                                         ) : (
-                                            <span
+                                            /*<span
                                                 style={{
                                                     visibility: "visible",
 
@@ -247,7 +246,7 @@ export default function About() {
                                                 }}
                                             >
                                                 <PayWStripe />
-                                            </span>
+                                            </span>*/
                                         )}
                                     </div>
                                 </div>
