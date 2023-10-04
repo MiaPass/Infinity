@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/* import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { PayPalButton } from "react-paypal-button-v2";
@@ -147,3 +147,4 @@ export default function PayWPayPal() {
         console.log(error);
     }
 }
+*/
